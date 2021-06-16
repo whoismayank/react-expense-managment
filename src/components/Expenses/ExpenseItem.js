@@ -7,7 +7,12 @@ const ExpenseItem = (props) => {
   const [title,setTitle] = useState(props?.title);
   const eventHandler = () =>{
     setTitle('Mahendra'); 
+    console.log(title);
   }
+
+  setTimeout(() => {
+    eventHandler();
+  }, 500);
   return (
     <Card className='expense-item'>
       <ExpenseDate date={props.date} />
@@ -20,4 +25,3 @@ const ExpenseItem = (props) => {
   );
 }
 export default ExpenseItem;
-
