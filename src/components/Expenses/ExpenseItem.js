@@ -5,14 +5,9 @@ import './ExpenseItem.css';
 import { useState } from 'react';
 const ExpenseItem = (props) => {
   const [title,setTitle] = useState(props?.title);
-  const eventHandler = () =>{
+  const eventHandler = (event) =>{
     setTitle('Mahendra'); 
-    console.log(title);
   }
-
-  setTimeout(() => {
-    eventHandler();
-  }, 500);
   return (
     <Card className='expense-item'>
       <ExpenseDate date={props.date} />
