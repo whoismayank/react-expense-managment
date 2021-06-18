@@ -3,7 +3,7 @@ import './ExpenseForm.css';
 const ExpenseForm = () =>{
     const [title, setTitle] = useState('Mahendra');
     const [amount, setAmount] = useState('');
-    const [date, setEnteredDate] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
     
     const titleChangeHandler = (event) =>{
         console.log(`title: ${event.target.value}`);
@@ -18,8 +18,21 @@ const ExpenseForm = () =>{
         setEnteredDate(event.target.value);
     }
 
+    //handle form submit
+    const submitHandler = (event) =>{
+        event.preventDefault()
+
+        const expenseData = {
+            title:title,
+            amount:amount,
+            date: new Date(enteredDate)
+        }
+
+        console.log(expenseData);
+    }
+
     return(
-        <form>
+        <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
