@@ -5,9 +5,6 @@ import './ExpenseItem.css';
 import { useState } from 'react';
 const ExpenseItem = (props) => {
   const [title,setTitle] = useState(props?.title);
-  const eventHandler = (event) =>{
-    setTitle('Mahendra'); 
-  }
   return (
     <Card className='expense-item'>
       <ExpenseDate date={props.date} />
@@ -15,7 +12,6 @@ const ExpenseItem = (props) => {
         <h2>{title}</h2>
         <div className='expense-item__price'>${props.amount}</div>
       </div>
-      <button onClick={eventHandler}>Change Title</button>
     </Card>
   );
 }
